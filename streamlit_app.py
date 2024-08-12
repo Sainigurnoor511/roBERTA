@@ -12,11 +12,11 @@ roberta_model = pipeline(model="cardiffnlp/twitter-roberta-base-sentiment-latest
 
 if (roberta_model(user_input)[0]['label']) == 0:
     st.write(" ")
-elif (roberta_model(data)[0]['label']) == "positive" :
+elif (roberta_model(user_input)[0]['label']) == "positive" :
     st.write("# 😊 Positive")
-elif (roberta_model(data)[0]['label']) == "neutal" :
+elif (roberta_model(user_input)[0]['label']) == "neutal" :
     st.write("# 😐 Neutral")
-elif (roberta_model(data)[0]['label']) == "negative" :
+elif (roberta_model(user_input)[0]['label']) == "negative" :
     st.write("# 😠 Negative")
 else :
     st.write("# ☠️ Error ☠️")
